@@ -1,0 +1,373 @@
+/*
+Project: Selectify
+Version: 1.0.0
+*/
+
+/*-----------------------------------------------------------------------------------*/
+/* #04.5 Selectify
+/*-----------------------------------------------------------------------------------*/
+
+.selectify {
+  position: relative;
+  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.selectify > button {
+  font-size: 13px;
+  font-weight: 400;
+  outline: none;
+  display: block;
+  overflow: hidden;
+
+  position: relative;
+
+  width: 100%;
+  height: 35px;
+  padding: 8px 12px;
+  padding-top: 7.5px;
+  padding-right: 35px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: none;
+  text-align: left;
+  white-space: nowrap;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: none;
+  text-overflow: ellipsis;
+
+  color: #222222;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.selectify > button > u {
+  text-decoration: none;
+}
+
+.selectify > button > u:after {
+  content: ", ";
+}
+
+.selectify > button > u:last-child:after {
+  display: none;
+}
+
+.selectify > button > em {
+  font-style: normal;
+
+  color: #aaaaaa;
+}
+
+.selectify > button > i {
+  display: inline-block;
+
+  position: relative;
+  top: -2px;
+
+  width: 3px;
+  height: 3px;
+  margin-right: 3px;
+
+  border-radius: 100%;
+  background: #db1919;
+}
+
+.selectify > button > i:last-child {
+  margin-right: 5px;
+}
+
+.selectify.disabled > button {
+  pointer-events: none;
+}
+
+.selectify > button:after {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  opacity: .3;
+  color: #000000;
+  background-size: 9px;
+  background-repeat: no-repeat;
+  transform-origin: center center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiAgIHdpZHRoPSI0NTEuODQ3cHgiIGhlaWdodD0iNDUxLjg0N3B4IiB2aWV3Qm94PSIwIDAgNDUxLjg0NyA0NTEuODQ3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTEuODQ3IDQ1MS44NDc7IiAgIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgPGc+ICAgIDxwYXRoIGQ9Ik0yMjUuOTIzLDM1NC43MDZjLTguMDk4LDAtMTYuMTk1LTMuMDkyLTIyLjM2OS05LjI2M0w5LjI3LDE1MS4xNTdjLTEyLjM1OS0xMi4zNTktMTIuMzU5LTMyLjM5NywwLTQ0Ljc1MSAgICAgIGMxMi4zNTQtMTIuMzU0LDMyLjM4OC0xMi4zNTQsNDQuNzQ4LDBsMTcxLjkwNSwxNzEuOTE1bDE3MS45MDYtMTcxLjkwOWMxMi4zNTktMTIuMzU0LDMyLjM5MS0xMi4zNTQsNDQuNzQ0LDAgICAgICBjMTIuMzY1LDEyLjM1NCwxMi4zNjUsMzIuMzkyLDAsNDQuNzUxTDI0OC4yOTIsMzQ1LjQ0OUMyNDIuMTE1LDM1MS42MjEsMjM0LjAxOCwzNTQuNzA2LDIyNS45MjMsMzU0LjcwNnoiLz4gIDwvZz48L3N2Zz4=);
+}
+
+.selectify.active > button:after {
+  opacity: 1;
+  top:11px;
+  transform:rotate(180deg);
+}
+
+.selectify.active > button {
+  z-index: 18;
+
+  border-bottom-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.selectify > .content {
+  font-size: 11px;
+
+  display: none;
+
+  position: absolute;
+  z-index: 17;
+  right: 0;
+  left: 0;
+
+  margin-top: -2px;
+  padding-top: 2px;
+
+  user-select: none;
+
+  color: #000000;
+  border: 1px solid #e1e1e1;
+  border-top: 0;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 16px -4px rgba(0, 0, 0, .06);
+  box-shadow: 0 1px 30px 0 rgba(0, 0, 0, .08);
+}
+
+.selectify.active > .content {
+  display: block;
+}
+
+.selectify > .content > .options {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  height: 241px;
+
+  user-select: none;
+}
+
+.selectify > .content > .filter {
+  position: relative;
+}
+
+.selectify > .content > .filter + .options {
+  height: 206px;
+}
+
+.selectify > .content .filter:before {
+  position: absolute;
+  z-index: 1;
+  top: 13px;
+  right: 12px;
+
+  width: 13px;
+  height: 13px;
+
+  content: "";
+  transition: .4s ease;
+
+  opacity: .3;
+  background-size:13px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTMgMTQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICA8ZyBpZD0iMV8xXzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDAwMDAwLCAtMTQwLjAwMDAwMCkiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiPiAgICA8ZyBpZD0iR3JvdXAtMTctQ29weSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIxLjAwMDAwMCwgMTM2LjAwMDAwMCkiPiAgICAgIDxnIGlkPSJHcm91cC01IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNS4wMDAwMDApIiBmaWxsPSJ0cmFuc3BhcmVudCI+ICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMiIGN4PSI0LjgyODQwMjM3IiBjeT0iNC44Mjg0MDIzNyIgcj0iNC44Mjg0MDIzNyI+PC9jaXJjbGU+ICAgICAgICA8cGF0aCBkPSJNMTAuOTgzMTU2MywxMS43ODMxNTYzIEw4LDguOCIgaWQ9IlBhdGgtMTEiPjwvcGF0aD4gICAgICA8L2c+ICAgIDwvZz4gIDwvZz48L3N2Zz4=);
+}
+
+.selectify.filtering > .content .filter:before {
+  opacity: .8;
+}
+
+.selectify > .content .filter > input[type="text"] {
+  font-size: 13px !important;
+
+  width: 100%;
+  height: 35px;
+  padding: 8px 12px;
+  padding-right: 35px;
+
+  transition: none;
+
+  border: 0 !important;
+  background: #0000;
+  box-shadow: none !important;
+}
+
+.selectify > .content > .filter > .loader {
+  margin-right: -8px;
+}
+
+.selectify > .content > .options ul {
+  position: relative;
+  margin: 0;
+
+  height: 100%;
+  padding: 0;
+
+  user-select: none;
+}
+
+.selectify > .content > .options ul:last-child {
+  padding-bottom: 4px;
+}
+
+.selectify > .content > .options ul > li[data-option] {
+  font-size: 13px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  padding: 11px 16px;
+
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #222222;
+}
+
+.selectify > .content > .options ul > li[disabled] {
+  opacity: .4;
+}
+
+.selectify > .content > .options ul > li[data-option]:not([disabled]):hover {
+  background-color: #f0f0f0;
+}
+
+.selectify > .content > .options ul > li[data-option].active {
+  color: #ffffff !important;
+  background: #cc0000 !important;
+}
+
+.selectify.multiple > .content > .options ul > li[data-option] {
+  padding-left: 32px;
+}
+
+.selectify.multiple > .content > .options ul > li[data-option]:before {
+  display: block;
+
+  position: absolute;
+  top: 11px;
+  left: 11px;
+
+  width: 12px;
+  height: 11px;
+
+  content: "";
+
+  border: 1px solid #d7d7d7;
+  border-radius: 3px;
+}
+
+.selectify.multiple > .content > .options ul > li[data-option].active:before {
+  border-color: transparent;
+  background: #00000059;
+}
+
+.selectify.multiple > .content > .options ul > li[data-option].active:after {
+  content: '';
+  font-size: 7px;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 8px;
+  background-size: 8px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI2IDI2IiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjYgMjYiIGZpbGw9IiNmZmYiPiAgPHBhdGggZD0ibS4zLDE0Yy0wLjItMC4yLTAuMy0wLjUtMC4zLTAuN3MwLjEtMC41IDAuMy0wLjdsMS40LTEuNGMwLjQtMC40IDEtMC40IDEuNCwwbC4xLC4xIDUuNSw1LjljMC4yLDAuMiAwLjUsMC4yIDAuNywwbDEzLjQtMTMuOWgwLjF2LTguODgxNzhlLTE2YzAuNC0wLjQgMS0wLjQgMS40LDBsMS40LDEuNGMwLjQsMC40IDAuNCwxIDAsMS40bDAsMC0xNiwxNi42Yy0wLjIsMC4yLTAuNCwwLjMtMC43LDAuMy0wLjMsMC0wLjUtMC4xLTAuNy0wLjNsLTcuOC04LjQtLjItLjN6Ij48L3BhdGg+PC9zdmc+);
+}
+
+.selectify > .content > .options ul > li[data-label] {
+  font-size: 14px;
+  font-weight: 700;
+
+  display: block;
+  overflow: hidden;
+
+  padding: 8px 12px 9px 12px;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+
+  color: #d00000;
+}
+
+.selectify > .content .loader {
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  bottom: 3px;
+
+  width: 27px;
+  height: 27px;
+
+  border-radius: 100%;
+}
+
+.selectify > .content.light .loader {
+  background: #ffffff;
+}
+
+.selectify > .content.dark .loader {
+  background: #242323;
+}
+
+.selectify > .content .loader > svg {
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+
+.selectify > .content .loader > svg > ellipse {
+  stroke: #d20000;
+  stroke-width: 4px;
+}
+
+.selectify.disabled > button:after {
+  opacity: 0;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* #01.5 Scrollbar
+/*-----------------------------------------------------------------------------------*/
+
+.selectify > .content > .options::-webkit-scrollbar-thumb:hover {
+    background-color: #aaaaaa;
+}
+
+.selectify > .content > .options::-webkit-scrollbar-thumb {
+    border: solid 2px #ffffff;
+    border-radius: 4px;
+    background-color: rgb(204, 204, 204);
+}
+
+.selectify > .content > .options::-webkit-scrollbar-track {
+    border: solid 7px #ffffff;
+    border-radius: 12px;
+    background-color: #cccccc;
+}
+
+.selectify > .content > .options::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* #04.5 Custom
+/*-----------------------------------------------------------------------------------*/
+
+.cage{
+  width: 320px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+select{
+  display: none;
+}
