@@ -4,10 +4,10 @@ import './Selectify';
 
 const selectify = $('select').Selectify({
   initialize: ($element) => {
-    console.log($element);
+    $element.find('[data-content]').removeAttr('data-content');
   },
 });
 
-selectify.on('change', function () {
-  console.log('changed', $(this));
+selectify.on('change', () => {
+  // console.log('changed', $(this));
 });

@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Selectify</title>
-  <link rel="stylesheet" type="text/css" href="reset.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+  <head>
+    <title>Selectify</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body>
+    <div class="cage">
+      <select name="months" data-filter="Hangi ay aranacak ?">
+        <optgroup label="Months">
+          <option value="Ocak" data-content="<i>01.</i><span>($content)</span>">Ocak</option>
+          <option value="Şubat" data-content="<i>02.</i><span>($content)</span>">Şubat</option>
+          <option value="Mart" data-content="<i>03.</i><span>($content)</span>">Mart</option>
+          <option value="Nisan" data-content="<i>04.</i><span>($content)</span>">Nisan</option>
+          <option value="Mayıs" data-content="<i>05.</i><span>($content)</span>">Mayıs</option>
+          <option value="Haziran" data-content="<i>06.</i><span>($content)</span>">Haziran</option>
+          <option value="Temmuz" data-content="<i>07.</i><span>($content)</span>">Temmuz</option>
+          <option value="Ağustos" data-content="<i>08.</i><span>($content)</span>">Ağustos</option>
+          <option value="Eylül" data-content="<i>09.</i><span>($content)</span>">Eylül</option>
+          <option value="Ekim" data-content="<i>10.</i><span>($content)</span>">Ekim</option>
+          <option value="Kasım" data-content="<i>11.</i><span>($content)</span>">Kasım</option>
+          <option value="Aralık" data-content="<i>12.</i><span>($content)</span>">Aralık</option>
+        </optgroup>
+      </select>
+    </div>
 
-  <div class="cage">
-    <select name="months" data-filter="true">
-      <optgroup label="Months">
-        <option value="ocak">Ocak</option>
-        <option value="subat">Şubat</option>
-        <option value="Mart">Mart</option>
-        <option value="Nisan">Nisan</option>
-        <option value="Mayıs">Mayıs</option>
-        <option value="Haziran">Haziran</option>
-        <option value="Temmuz">Temmuz</option>
-        <option value="Ağustos">Ağustos</option>
-        <option value="Eylül">Eylül</option>
-        <option value="Ekim">Ekim</option>
-        <option value="Kasım">Kasım</option>
-        <option value="Aralık">Aralık</option>
-      </optgroup>
-    </select>
-  </div>
+    <div class="cage">    
+      <select name="names[]" multiple data-placeholder="Choose a name" data-filter="Aramak istediğiniz ismi yazın...">
+        <optgroup label="Fake Names" data-content="<i>*</i><span>($content)</span>">
+          <option value="Mario Speedwagon">Mario Speedwagon</option>
+          <option value="Petey Cruiser">Petey Cruiser</option>
+          <option value="Anna Sthesia">Anna Sthesia</option>
+          <option value="Gail Forcewind">Gail Forcewind</option>
+          <option value="Nick R. Bocker">Nick R. Bocker</option>
+          <option value="Ira Membrit">Ira Membrit</option>
+          <option value="Sue Vaneer">Sue Vaneer</option>
+          <option value="Sal Monella">Sal Monella</option>
+          <option value="Jimmy Changa">Jimmy Changa</option>
+          <option value="Cory Ander">Cory Ander</option>
+          <option value="Don Stairs">Don Stairs</option>
+          <option value="Moe Fugga">Moe Fugga</option>
+          <option value="Graham Cracker">Graham Cracker</option>
+          <option value="Tom Foolery">Tom Foolery</option>
+          <option value="Holly Graham">Holly Graham</option>
+          <option value="Polly Tech">Polly Tech</option>
+          <option value="Pat Agonia">Pat Agonia</option>
+          <option value="Phil Harmonic">Phil Harmonic</option>
+          <option value="Donatella Nobatti">Donatella Nobatti</option>
+        </optgroup>
+      </select>
+    </div>
 
-  <div class="cage">    
-    <select name="names[]" multiple data-placeholder="Choose a name" data-filter="true">
-      <optgroup label="Fake Names">
-        <option>Mario Speedwagon</option>
-        <option>Petey Cruiser</option>
-        <option>Anna Sthesia</option>
-        <option>Gail Forcewind</option>
-        <option>Nick R. Bocker</option>
-        <option>Ira Membrit</option>
-        <option>Sue Vaneer</option>
-        <option>Sal Monella</option>
-        <option>Jimmy Changa</option>
-        <option>Cory Ander</option>
-        <option>Don Stairs</option>
-        <option>Moe Fugga</option>
-        <option>Graham Cracker</option>
-        <option>Tom Foolery</option>
-        <option>Holly Graham</option>
-        <option>Polly Tech</option>
-        <option>Pat Agonia</option>
-        <option>Phil Harmonic</option>
-        <option>Donatella Nobatti</option>
-      </optgroup>
-    </select>
-  </div>
-
-  <script src="../dist/bundle.js"></script>
-</body>
+    <script src="../dist/bundle.js"></script>
+  </body>
 </html>

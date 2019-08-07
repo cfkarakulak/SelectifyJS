@@ -43,7 +43,7 @@ export default function updateItem($element) {
 
     if (data.length > 0) {
       return $select.val(data).trigger('change').next('button').html($select.find('option:selected').map(function () {
-        return `<u>${this.innerHTML.trim().replace(/&nbsp;/g, '<i></i>')}</u>`;
+        return `<u>${$.trim($(this).html())}</u>`;
       }).get());
     }
 
@@ -56,7 +56,7 @@ export default function updateItem($element) {
     $element.addClass('active');
 
     return $select.val($element.data('value')).trigger('change').next('button').html(
-      $element.html().replace(/&nbsp;/g, '<i></i>'),
+      $.trim($element.data('value')),
     )
       .next('.content')
       .find('li[data-option].active')
