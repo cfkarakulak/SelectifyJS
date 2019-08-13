@@ -9,7 +9,7 @@
                                  |___/
 
   Description: Select selected item by watching selection ?
-  Version: 1.0.0
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS

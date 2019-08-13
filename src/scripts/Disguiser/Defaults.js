@@ -8,19 +8,17 @@
                                   __/ |
                                  |___/
 
-  Description: Helper class for frequently used public methods.
-  Version: 1.0.0
+  Description: Contains default values and shit.
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS
 */
 
-export default class Helpers {
-  static is(data, key) {
-    return data.is(key);
-  }
+/* eslint-disable no-unused-vars */
 
-  static has(data, key) {
-    return Object.prototype.hasOwnProperty.call(data, key);
-  }
-}
+const boilerplate = {
+  initialize: ($element) => {},
+};
+
+export default boilerplate;

@@ -1,2 +1,6 @@
-import './main';
-// import '../styles/base.less';
+/* Scripts */
+import './example/main';
+
+/* Styles */
+import './styles/reset.less';
+import './styles/style.less';

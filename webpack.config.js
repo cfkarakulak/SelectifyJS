@@ -41,7 +41,9 @@ const config = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'bundle.css',
+    }),
   ],
   devtool: 'source-map',
 };

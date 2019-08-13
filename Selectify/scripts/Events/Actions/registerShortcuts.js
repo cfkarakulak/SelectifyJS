@@ -1,3 +1,9 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = registerShortcuts;
 /*
            _           _   _  __
           | |         | | (_)/ _|
@@ -9,13 +15,13 @@
                                  |___/
 
   Description: Adds ESC and ENTER support for noobs.
-  Version: 1.0.0
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS
 */
 
-export default function shortcutSupport($self, event) {
+function registerShortcuts($self, event) {
   if (event.keyCode === 13) {
     $('.selectify.active li[data-option].active').click();
   }

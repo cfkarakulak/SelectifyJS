@@ -8,8 +8,8 @@
                                   __/ |
                                  |___/
 
-  Description: Disguise native select element to make it even uglier.
-  Version: 1.0.0
+  Description: Disguise native select element.
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS

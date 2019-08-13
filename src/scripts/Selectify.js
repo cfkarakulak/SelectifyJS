@@ -9,7 +9,7 @@
                                  |___/
 
   Description: Initiates this worthless plugin.
-  Version: 1.0.0
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS
@@ -34,7 +34,7 @@ window.jQuery = $;
     factory(window.jQuery);
   }
 }(($) => {
-  $.fn.Selectify = function (args) {
+  $.fn.selectify = function (args) {
     const events = new Events();
 
     events.add({
@@ -63,7 +63,7 @@ window.jQuery = $;
 
     events.add({
       event: 'keyup',
-      handler: events.shortcutSupport,
+      handler: events.registerShortcuts,
     });
 
     events.add({
@@ -72,8 +72,8 @@ window.jQuery = $;
     });
 
     return this.each((i, el) => {
-      if (!$.data(el, 'Selectify')) {
-        $.data(el, 'Selectify', new Disguiser(el, args));
+      if (!$.data(el, 'selectifyJS')) {
+        $.data(el, 'selectifyJS', new Disguiser(el, args));
       }
     });
   };

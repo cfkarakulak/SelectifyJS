@@ -9,7 +9,7 @@
                                  |___/
 
   Description: Bootstrap for event listeners and what not.
-  Version: 1.0.0
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS
@@ -19,7 +19,7 @@ import toggleButton from './Actions/toggleButton';
 import selectItem from './Actions/selectItem';
 import filterItem from './Actions/filterItem';
 import moveCurrent from './Actions/moveCurrent';
-import shortcutSupport from './Actions/shortcutSupport';
+import registerShortcuts from './Actions/registerShortcuts';
 import revertState from './Actions/revertState';
 
 export default class Events {
@@ -57,8 +57,8 @@ export default class Events {
     return moveCurrent($(this), event);
   }
 
-  shortcutSupport(event) {
-    return shortcutSupport($(this), event);
+  registerShortcuts(event) {
+    return registerShortcuts($(this), event);
   }
 
   revertState(event) {

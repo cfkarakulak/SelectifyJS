@@ -1,32 +1,30 @@
 /*
 Project: Selectify
-Version: 1.0.0
+Author: Cemre Fatih Karakulak
+Repo: https://github.com/cfkarakulak/SelectifyJS;
+Version: 1.0.1
 */
 
 /*-----------------------------------------------------------------------------------*/
-/* #04.5 Selectify
+/* #1.0 Selectify
 /*-----------------------------------------------------------------------------------*/
 
 .selectify {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   position: relative;
-  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .selectify > button {
   font-size: 13px;
   font-weight: 400;
-  outline: none;
   display: block;
   overflow: hidden;
-
   position: relative;
-
   width: 100%;
   height: 35px;
   padding: 8px 12px;
   padding-top: 7.5px;
   padding-right: 35px;
-
   cursor: pointer;
   user-select: none;
   transition: none;
@@ -36,10 +34,10 @@ Version: 1.0.0
   text-decoration: none;
   text-transform: none;
   text-overflow: ellipsis;
-
   color: #222222;
   border: 1px solid #e1e1e1;
   border-radius: 3px;
+  outline: none;
   background-color: #ffffff;
 }
 
@@ -57,7 +55,6 @@ Version: 1.0.0
 
 .selectify > button > em {
   font-style: normal;
-
   color: #aaaaaa;
 }
 
@@ -72,42 +69,36 @@ Version: 1.0.0
   width: 10px;
   height: 10px;
   content: "";
+  transform-origin: center center;
   opacity: .3;
   color: #000000;
-  background-size: 9px;
-  background-repeat: no-repeat;
-  transform-origin: center center;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiAgIHdpZHRoPSI0NTEuODQ3cHgiIGhlaWdodD0iNDUxLjg0N3B4IiB2aWV3Qm94PSIwIDAgNDUxLjg0NyA0NTEuODQ3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTEuODQ3IDQ1MS44NDc7IiAgIHhtbDpzcGFjZT0icHJlc2VydmUiPiAgPGc+ICAgIDxwYXRoIGQ9Ik0yMjUuOTIzLDM1NC43MDZjLTguMDk4LDAtMTYuMTk1LTMuMDkyLTIyLjM2OS05LjI2M0w5LjI3LDE1MS4xNTdjLTEyLjM1OS0xMi4zNTktMTIuMzU5LTMyLjM5NywwLTQ0Ljc1MSAgICAgIGMxMi4zNTQtMTIuMzU0LDMyLjM4OC0xMi4zNTQsNDQuNzQ4LDBsMTcxLjkwNSwxNzEuOTE1bDE3MS45MDYtMTcxLjkwOWMxMi4zNTktMTIuMzU0LDMyLjM5MS0xMi4zNTQsNDQuNzQ0LDAgICAgICBjMTIuMzY1LDEyLjM1NCwxMi4zNjUsMzIuMzkyLDAsNDQuNzUxTDI0OC4yOTIsMzQ1LjQ0OUMyNDIuMTE1LDM1MS42MjEsMjM0LjAxOCwzNTQuNzA2LDIyNS45MjMsMzU0LjcwNnoiLz4gIDwvZz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: 9px;
 }
 
 .selectify.active > button:after {
+  top: 11px;
+  transform: rotate(180deg);
   opacity: 1;
-  top:11px;
-  transform:rotate(180deg);
 }
 
 .selectify.active > button {
   z-index: 18;
-
   border-bottom-color: #ffffff !important;
   background: #ffffff !important;
 }
 
 .selectify > .content {
   font-size: 11px;
-
   display: none;
-
   position: absolute;
   z-index: 17;
   right: 0;
   left: 0;
-
   margin-top: -2px;
   padding-top: 2px;
-
   user-select: none;
-
   color: #000000;
   border: 1px solid #e1e1e1;
   border-top: 0;
@@ -126,9 +117,7 @@ Version: 1.0.0
 .selectify > .content > .options {
   overflow-x: hidden;
   overflow-y: scroll;
-
   height: 241px;
-
   user-select: none;
 }
 
@@ -145,16 +134,13 @@ Version: 1.0.0
   z-index: 1;
   top: 13px;
   right: 12px;
-
   width: 13px;
   height: 13px;
-
   content: "";
   transition: .4s ease;
-
   opacity: .3;
-  background-size:13px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTMgMTQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICA8ZyBpZD0iMV8xXzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjAuMDAwMDAwLCAtMTQwLjAwMDAwMCkiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiPiAgICA8ZyBpZD0iR3JvdXAtMTctQ29weSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIxLjAwMDAwMCwgMTM2LjAwMDAwMCkiPiAgICAgIDxnIGlkPSJHcm91cC01IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNS4wMDAwMDApIiBmaWxsPSJ0cmFuc3BhcmVudCI+ICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMiIGN4PSI0LjgyODQwMjM3IiBjeT0iNC44Mjg0MDIzNyIgcj0iNC44Mjg0MDIzNyI+PC9jaXJjbGU+ICAgICAgICA8cGF0aCBkPSJNMTAuOTgzMTU2MywxMS43ODMxNTYzIEw4LDguOCIgaWQ9IlBhdGgtMTEiPjwvcGF0aD4gICAgICA8L2c+ICAgIDwvZz4gIDwvZz48L3N2Zz4=);
+  background-size: 13px;
 }
 
 .selectify.filtering > .content .filter:before {
@@ -163,14 +149,11 @@ Version: 1.0.0
 
 .selectify > .content .filter > input[type="text"] {
   font-size: 13px !important;
-
   width: 100%;
   height: 35px;
   padding: 8px 12px;
   padding-right: 35px;
-
   transition: none;
-
   border: 0 !important;
   background: #0000;
   box-shadow: none !important;
@@ -182,11 +165,9 @@ Version: 1.0.0
 
 .selectify > .content > .options ul {
   position: relative;
-  margin: 0;
-
   height: 100%;
+  margin: 0;
   padding: 0;
-
   user-select: none;
 }
 
@@ -196,18 +177,13 @@ Version: 1.0.0
 
 .selectify > .content > .options ul > li[data-option] {
   font-size: 13px;
-
   overflow: hidden;
-
   position: relative;
-
   padding: 11px 16px;
-
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   color: #222222;
 }
 
@@ -230,16 +206,12 @@ Version: 1.0.0
 
 .selectify.multiple > .content > .options ul > li[data-option]:before {
   display: block;
-
   position: absolute;
   top: 11px;
   left: 11px;
-
   width: 12px;
   height: 11px;
-
   content: "";
-
   border: 1px solid #d7d7d7;
   border-radius: 3px;
 }
@@ -250,69 +222,30 @@ Version: 1.0.0
 }
 
 .selectify.multiple > .content > .options ul > li[data-option].active:after {
-  content: '';
   font-size: 7px;
   position: absolute;
   top: 14px;
   left: 14px;
-  background-repeat: no-repeat;
   width: 8px;
   height: 8px;
-  background-size: 8px;
+  content: "";
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI2IDI2IiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjYgMjYiIGZpbGw9IiNmZmYiPiAgPHBhdGggZD0ibS4zLDE0Yy0wLjItMC4yLTAuMy0wLjUtMC4zLTAuN3MwLjEtMC41IDAuMy0wLjdsMS40LTEuNGMwLjQtMC40IDEtMC40IDEuNCwwbC4xLC4xIDUuNSw1LjljMC4yLDAuMiAwLjUsMC4yIDAuNywwbDEzLjQtMTMuOWgwLjF2LTguODgxNzhlLTE2YzAuNC0wLjQgMS0wLjQgMS40LDBsMS40LDEuNGMwLjQsMC40IDAuNCwxIDAsMS40bDAsMC0xNiwxNi42Yy0wLjIsMC4yLTAuNCwwLjMtMC43LDAuMy0wLjMsMC0wLjUtMC4xLTAuNy0wLjNsLTcuOC04LjQtLjItLjN6Ij48L3BhdGg+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-size: 8px;
 }
 
 .selectify > .content > .options ul > li[data-label] {
   font-size: 14px;
   font-weight: 700;
-
   display: block;
   overflow: hidden;
-
   padding: 8px 12px 9px 12px;
   cursor: default;
   user-select: none;
   white-space: nowrap;
   text-overflow: ellipsis;
   pointer-events: none;
-
   color: #d00000;
-}
-
-.selectify > .content .loader {
-  position: absolute;
-  z-index: 1;
-  right: 12px;
-  bottom: 3px;
-
-  width: 27px;
-  height: 27px;
-
-  border-radius: 100%;
-}
-
-.selectify > .content.light .loader {
-  background: #ffffff;
-}
-
-.selectify > .content.dark .loader {
-  background: #242323;
-}
-
-.selectify > .content .loader > svg {
-  width: 12px;
-  height: 12px;
-  margin: 0 auto;
-  margin-top: 8px;
-}
-
-.selectify > .content .loader > svg > ellipse {
-  stroke: #d20000;
-  stroke-width: 4px;
-}
-
-.selectify.disabled > button:after {
-  opacity: 0;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -343,24 +276,24 @@ Version: 1.0.0
 /* #04.5 Custom
 /*-----------------------------------------------------------------------------------*/
 
-.selectify > .content > .options ul > li[data-option] i{
-  font-style: normal;
+.selectify > .content > .options ul > li[data-option] i {
   font-weight: 700;
-  color:#d10000;
+  font-style: normal;
   margin-right: 1px;
+  color: #d10000;
 }
 
-.selectify > .content > .options ul > li[data-option].active i{
-  color:#fff;
+.selectify > .content > .options ul > li[data-option].active i {
+  color: #ffffff;
 }
 
-.cage{
+.cage {
   width: 320px;
+  margin-top: 30px;
   margin-bottom: 10px;
   margin-left: 20px;
-  margin-top: 30px;
 }
 
-select{
+select {
   display: none;
 }

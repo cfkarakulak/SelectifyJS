@@ -1,3 +1,9 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = revertState;
 /*
            _           _   _  __
           | |         | | (_)/ _|
@@ -9,13 +15,13 @@
                                  |___/
 
   Description: Conceals selectify options panel.
-  Version: 1.0.0
+  Version: 1.0.1
   License: WTFPL
    Author: CFK <cradexco@gmail.com>
      Repo: https://github.com/cfkarakulak/SelectifyJS
 */
 
-export default function revertState($self, event) {
+function revertState($self, event) {
   if ($(event.target).closest('.selectify').length <= 0) {
     $('.selectify').removeClass('active');
   }
