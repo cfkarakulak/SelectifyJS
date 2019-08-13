@@ -1,15 +1,14 @@
 ### selectifyJS
-Turn your boring native select elements into something beautiful.
 This markdown is currently incomplete and to be completed soon.
 
 #### Install Using Package Managers
 
 ```sh
 # Bower
-bower install --save selectifyjs
+bower install --save selectifizejs
 
 # NPM
-npm install selectifyjs
+npm install selectifizejs
 ```
 
 #### Import Library
@@ -73,7 +72,7 @@ const selectify = $('select[data-selectify]').selectify({
 });
 ```
 
-#### Setting up development environment
+#### Setting up a development environment
 
 You can go ahead and play around with ```src/example/index.html``` after running the commands below.
 

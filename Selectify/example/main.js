@@ -4,7 +4,7 @@ require('../scripts/Selectify');
 
 /* eslint-disable no-unused-vars */
 
-var selectify = $('select').Selectify({
+var selectify = $('select').selectify({
   initialize: function initialize($element) {
     $element.find('[data-content]').removeAttr('data-content');
   }
