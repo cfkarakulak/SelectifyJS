@@ -2,7 +2,7 @@
   "name": "selectifizejs",
   "version": "1.0.0-rc.1",
   "description": "Turn your boring native select elements into something beautiful",
-  "main": "Selectify/Selectify.js",
+  "main": "Selectify/scripts/Selectify.js",
   "scripts": {
     "dev": "webpack --mode=development",
     "watch": "webpack --watch --mode=development",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/cfkarakulak/SelectifyJS#readme",
   "peerDependencies": {
-    "jquery": "^3.4.1"
+    "jquery": ">=1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -50,6 +50,6 @@
     "braces": ">=2.3.1"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": ">=1.8.0"
   }
 }
